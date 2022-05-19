@@ -10,6 +10,7 @@ class Account(ABC):
         self.__number = number
         self.__balance = 0
         self.__overdraft = False
+        self.__extract = list()
 
     def get_name(self):
         return self.__name
@@ -51,6 +52,10 @@ class Account(ABC):
                     print("Saldo Insuficiente")
                 else:
                     self.__balance = self.__balance - x
+                    self.__extract.append("Saque de " + str(x))
+            else:
+                self.__balance = self.__balance - x
+                self.__extract.append("Saque de " + str(x))
         else:
             print("Valor Invalido")
 
@@ -59,3 +64,8 @@ class Account(ABC):
             print("Valor Invalido")
         else:
             self.__balance = x
+            self.__extract.append("Deposito de " + str(x))
+
+
+    def extract(self):
+            print(self.__extract)
