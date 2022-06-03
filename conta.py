@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class Account(ABC):
  
     @abstractmethod
-    def __init__(self, name, cpf, address, number, overdraft):
+    def __init__(self, name, cpf, address, number, balance, overdraft):
         self.__name = name
         self.__cpf = cpf
         self.__address = address
@@ -12,37 +12,37 @@ class Account(ABC):
         self.__overdraft = False
         self.__extract = list()
 
-    def get_name(self):
+    def getName(self):
         return self.__name
       
-    def set_name(self, x):
+    def setName(self, x):
         self.__name = x
 
-    def get_cpf(self):
+    def getCpf(self):
         return self.__cpf
       
-    def set_cpf(self, x):
+    def setCpf(self, x):
         self.__name = x
 
-    def get_address(self):
+    def getAddress(self):
         return self.__address
       
-    def set_address(self, x):
+    def setAddress(self, x):
         self.__address = x
 
-    def get_number(self):
+    def getNumber(self):
         return self.__number
       
-    def set_number(self, x):
+    def setNumber(self, x):
         self.__number = x
 
-    def get_number(self):
+    def getNumber(self):
         return self.__number
 
-    def get_balance(self):
+    def getBalance(self):
         return self.__balance
 
-    def set_overdraft(self, x):
+    def setOverdraft(self, x):
         self.__overdraft = x
       
     def withdraw(self, x):
