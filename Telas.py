@@ -10,7 +10,9 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter.constants import *
 
-import Telas_support
+import Telas_support as telaapp
+
+
 
 class Login:
     def __init__(self, top=None):
@@ -46,6 +48,18 @@ class Login:
 
         self.top = top
 
+        
+
+        def login():
+
+            user = self.username.get()
+            password = self.password.get()
+
+            if user == 'Natan of Family' and password == '123':
+                print('Acertou mizeravi')
+            else:
+                print('Errou')
+
         self.Frame1 = tk.Frame(self.top)
         self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
         self.Frame1.configure(relief='groove')
@@ -60,12 +74,14 @@ class Login:
         self.login.configure(takefocus="")
         self.login.configure(text='''Login''')
         self.login.configure(compound='left')
+        self.login.configure(command= telaapp.menu)
 
         self.cadastrar = ttk.Button(self.Frame1)
         self.cadastrar.place(relx=0.446, rely=0.724, height=25, width=76)
         self.cadastrar.configure(takefocus="")
         self.cadastrar.configure(text='''Cadastrar''')
         self.cadastrar.configure(compound='left')
+        self.cadastrar.configure(command=telaapp.cadastrar)
 
         self.username = ttk.Entry(self.Frame1)
         self.username.place(relx=0.413, rely=0.396, relheight=0.044
@@ -154,18 +170,21 @@ class Menu:
         self.BTdeposito.configure(takefocus="")
         self.BTdeposito.configure(text='''Deposito''')
         self.BTdeposito.configure(compound='left')
+        self.BTdeposito.configure(command=telaapp.deposito)
 
         self.BTsaque = ttk.Button(self.top)
         self.BTsaque.place(relx=0.3, rely=0.533, height=25, width=206)
         self.BTsaque.configure(takefocus="")
         self.BTsaque.configure(text='''Saque''')
         self.BTsaque.configure(compound='left')
+        self.BTsaque.configure(command=telaapp.saque)
 
         self.BTextrato = ttk.Button(self.top)
         self.BTextrato.place(relx=0.3, rely=0.667, height=25, width=206)
         self.BTextrato.configure(takefocus="")
         self.BTextrato.configure(text='''Extrato''')
         self.BTextrato.configure(compound='left')
+        self.BTextrato.configure(command=telaapp.extrato)
 
         self.TLabel1 = ttk.Label(self.top)
         self.TLabel1.place(relx=0.34, rely=0.033, height=39, width=155)
@@ -223,6 +242,11 @@ class Cadastro:
 
         self.top = top
 
+        def add():
+            nome = self.name.get()
+            
+
+
         self.Frame1 = tk.Frame(self.top)
         self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
         self.Frame1.configure(relief='groove')
@@ -263,7 +287,7 @@ class Cadastro:
         self.typeaccount = ttk.Combobox(self.Frame1)
         self.typeaccount.place(relx=0.397, rely=0.659, relheight=0.046
                 , relwidth=0.236)
-        self.value_list = ['poupança,corrente',]
+        self.value_list = ['Poupança','Corrente']
         self.typeaccount.configure(values=self.value_list)
         self.typeaccount.configure(takefocus="")
 
@@ -349,6 +373,7 @@ class Cadastro:
         self.Cadastrar.configure(takefocus="")
         self.Cadastrar.configure(text='''Cadastrar''')
         self.Cadastrar.configure(compound='left')
+        self.Cadastrar.configure(command= telaapp.login)
 
         self.TEntry1 = ttk.Entry(self.Frame1)
         self.TEntry1.place(relx=0.397, rely=0.747, relheight=0.046
@@ -366,6 +391,8 @@ class Cadastro:
         self.TLabel1.configure(justify='left')
         self.TLabel1.configure(text='''Cheque Especial:''')
         self.TLabel1.configure(compound='left')
+        
+        
 
 class Deposito:
     def __init__(self, top=None):
@@ -588,10 +615,10 @@ class Extrato:
         self.TLabel1.configure(compound='left')
 
 def start_up():
-    Telas_support.main()
+    telaapp.main()
 
 if __name__ == '__main__':
-    Telas_support.main()
+    telaapp.main()
 
 
 

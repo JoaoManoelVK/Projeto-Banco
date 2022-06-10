@@ -12,35 +12,43 @@ from tkinter.constants import *
 
 import Telas
 
+def login():
+    global _top1, _w1
+    _top1 = root
+    _w1 = Telas.Login(_top1)
+
+def cadastrar():
+    global _top3, _w3
+    _top3 = root
+    _w3 = Telas.Cadastro(_top3)
+
+def menu():
+    global _top2, _w2
+    _top2 = root
+    _w2 = Telas.Menu(_top2)
+
+def deposito():
+    global _top4, _w4
+    _top4 = root
+    _w4 = Telas.Deposito(_top4)
+
+def saque():
+    global _top8, _w8
+    _top8 = root
+    _w8 = Telas.Saque(_top8)
+
+def extrato():
+    global _top9, _w9
+    _top9 = root
+    _w9 = Telas.Extrato(_top9)
+
 def main(*args):
     '''Main entry point for the application.'''
     global root
     root = tk.Tk()
     root.protocol( 'WM_DELETE_WINDOW' , root.destroy)
-    # Creates a toplevel widget.
-    global _top1, _w1
-    _top1 = root
-    _w1 = Telas.Login(_top1)
-    # Creates a toplevel widget.
-    global _top2, _w2
-    _top2 = tk.Toplevel(root)
-    _w2 = Telas.Menu(_top2)
-    # Creates a toplevel widget.
-    global _top3, _w3
-    _top3 = tk.Toplevel(root)
-    _w3 = Telas.Cadastro(_top3)
-    # Creates a toplevel widget.
-    global _top4, _w4
-    _top4 = tk.Toplevel(root)
-    _w4 = Telas.Deposito(_top4)
-    # Creates a toplevel widget.
-    global _top8, _w8
-    _top8 = tk.Toplevel(root)
-    _w8 = Telas.Saque(_top8)
-    # Creates a toplevel widget.
-    global _top9, _w9
-    _top9 = tk.Toplevel(root)
-    _w9 = Telas.Extrato(_top9)
+    login()
+    
     root.mainloop()
 
 if __name__ == '__main__':
