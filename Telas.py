@@ -48,8 +48,6 @@ class Login:
 
         self.top = top
 
-        
-
         def login():
 
             user = self.username.get()
@@ -81,7 +79,7 @@ class Login:
         self.cadastrar.configure(takefocus="")
         self.cadastrar.configure(text='''Cadastrar''')
         self.cadastrar.configure(compound='left')
-        self.cadastrar.configure(command=telaapp.cadastrar)
+        self.cadastrar.configure(command= telaapp.cadastrar)
 
         self.username = ttk.Entry(self.Frame1)
         self.username.place(relx=0.413, rely=0.396, relheight=0.044
@@ -164,6 +162,15 @@ class Menu:
         top.configure(highlightcolor="black")
 
         self.top = top
+
+        self.Frame1 = tk.Frame(self.top)
+        self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
+        self.Frame1.configure(relief='groove')
+        self.Frame1.configure(borderwidth="2")
+        self.Frame1.configure(relief="groove")
+        self.Frame1.configure(background="#ffffff")
+        self.Frame1.configure(highlightbackground="#d9d9d9")
+        self.Frame1.configure(highlightcolor="black")
 
         self.BTdeposito = ttk.Button(self.top)
         self.BTdeposito.place(relx=0.3, rely=0.4, height=25, width=206)
@@ -428,6 +435,15 @@ class Deposito:
 
         self.top = top
 
+        self.Frame1 = tk.Frame(self.top)
+        self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
+        self.Frame1.configure(relief='groove')
+        self.Frame1.configure(borderwidth="2")
+        self.Frame1.configure(relief="groove")
+        self.Frame1.configure(background="#ffffff")
+        self.Frame1.configure(highlightbackground="#d9d9d9")
+        self.Frame1.configure(highlightcolor="black")
+
         self.TEntry1 = ttk.Entry(self.top)
         self.TEntry1.place(relx=0.067, rely=0.4, relheight=0.21, relwidth=0.853)
         self.TEntry1.configure(takefocus="")
@@ -458,6 +474,7 @@ class Deposito:
         self.Button1.configure(highlightcolor="black")
         self.Button1.configure(pady="0")
         self.Button1.configure(text='''Voltar''')
+        self.Button1.configure(command= telaapp.menu)
 
         self.TLabel1 = ttk.Label(self.top)
         self.TLabel1.place(relx=0.067, rely=0.05, height=18, width=205)
@@ -504,6 +521,16 @@ class Saque:
 
         self.top = top
 
+        self.Frame1 = tk.Frame(self.top)
+        self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
+        self.Frame1.configure(relief='groove')
+        self.Frame1.configure(borderwidth="2")
+        self.Frame1.configure(relief="groove")
+        self.Frame1.configure(background="#ffffff")
+        self.Frame1.configure(highlightbackground="#d9d9d9")
+        self.Frame1.configure(highlightcolor="black")
+
+
         self.TEntry1 = ttk.Entry(self.top)
         self.TEntry1.place(relx=0.067, rely=0.4, relheight=0.21, relwidth=0.853)
         self.TEntry1.configure(takefocus="")
@@ -534,6 +561,7 @@ class Saque:
         self.Button1.configure(highlightcolor="black")
         self.Button1.configure(pady="0")
         self.Button1.configure(text='''Voltar''')
+        self.Button1.configure(command= telaapp.menu)
 
         self.TLabel1 = ttk.Label(self.top)
         self.TLabel1.place(relx=0.067, rely=0.05, height=18, width=205)
@@ -580,6 +608,16 @@ class Extrato:
 
         self.top = top
 
+        self.Frame1 = tk.Frame(self.top)
+        self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.008)
+        self.Frame1.configure(relief='groove')
+        self.Frame1.configure(borderwidth="2")
+        self.Frame1.configure(relief="groove")
+        self.Frame1.configure(background="#ffffff")
+        self.Frame1.configure(highlightbackground="#d9d9d9")
+        self.Frame1.configure(highlightcolor="black")
+
+
         self.Button1 = tk.Button(self.top)
         self.Button1.place(relx=0.8, rely=0.876, height=44, width=107)
         self.Button1.configure(activebackground="beige")
@@ -592,6 +630,7 @@ class Extrato:
         self.Button1.configure(highlightcolor="black")
         self.Button1.configure(pady="0")
         self.Button1.configure(text='''Voltar''')
+        self.Button1.configure(command= telaapp.menu)
 
         self.TLabel1 = ttk.Label(self.top)
         self.TLabel1.place(relx=0.033, rely=0.026, height=75, width=410)
