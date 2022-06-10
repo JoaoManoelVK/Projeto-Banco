@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
  
 class Account(ABC):
- 
     @abstractmethod
     def __init__(self, name, cpf, address, number, balance, overdraft):
         self.__name = name
@@ -65,7 +64,6 @@ class Account(ABC):
         else:
             self.__balance = x
             self.__extract.append("Deposito de " + str(x))
-
 
     def extract(self):
             print(self.__extract)

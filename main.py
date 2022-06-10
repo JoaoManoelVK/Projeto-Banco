@@ -5,17 +5,40 @@
 #  in conjunction with Tcl version 8.6
 #    Jun 08, 2022 04:14:12 PM -03  platform: Windows NT
 
-import sys
-import tkinter as tk
+
 import tkinter.ttk as ttk
+import tkinter as tk
+
 from tkinter.constants import *
 
+import app.Login
+
+import sys
+
 import Telas
+import sqlite3
+
+try:
+    sqliteConnection = sqlite3.connect('Banco.db')
+    cursor = sqliteConnection.cursor()
+    print("Database created and Successfully Connected to SQLite")
+
+    sqlite_select_Query = "select sqlite_version();"
+    cursor.execute(sqlite_select_Query)
+    record = cursor.fetchall()
+    print("SQLite Database Version is: ", record)
+    cursor.close()
+except sqlite3.Error as error:
+    print("Error while connecting to sqlite", error)
+finally:
+    if sqliteConnection:
+        sqliteConnection.close()
+        print("The SQLite connection is closed")
 
 def login():
     global _top1, _w1
     _top1 = root
-    _w1 = Telas.Login(_top1)
+    _w1 = app.Login.Login(_top1)
 
 def cadastrar():
     global _top3, _w3
@@ -26,7 +49,7 @@ def menu():
     global _top2, _w2
     _top2 = root
     _w2 = Telas.Menu(_top2)
-
+    
 def deposito():
     global _top4, _w4
     _top4 = root

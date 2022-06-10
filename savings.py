@@ -1,4 +1,4 @@
-from conta import Account
+from Account import Account
 
 
 class savings(Account):
@@ -8,4 +8,3 @@ class savings(Account):
 
         def taxas(self):
             self.__balance =  self.__balance + (self.__balance * taxes) 
-
