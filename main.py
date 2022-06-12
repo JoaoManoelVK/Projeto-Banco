@@ -15,7 +15,7 @@ import app.Login
 
 import sys
 
-import Telas
+import app.Telas as Telas
 import sqlite3
 
 try:
