@@ -54,12 +54,12 @@ class Inicio:
         self.Administrador.configure(foreground="#000000")
         self.Administrador.configure(highlightbackground="#d9d9d9")
         self.Administrador.configure(highlightcolor="black")
-        photo_location = "escolhamoduloegressos_icone.gif"
+        photo_location = "app\escolhamoduloegressos_icone.gif"
         global _img0
         _img0 = tk.PhotoImage(file=photo_location)
         self.Administrador.configure(image=_img0)
         self.Administrador.configure(pady="0")
-        self.Administrador.configure(text='''Administrador''')
+        self.Administrador.configure(text='''Diretor''')
 
         self.Cliente = tk.Button(self.Initial)
         self.Cliente.place(relx=0.625, rely=0.033, height=74, width=147)
@@ -72,7 +72,7 @@ class Inicio:
         self.Cliente.configure(foreground="#000000")
         self.Cliente.configure(highlightbackground="#d9d9d9")
         self.Cliente.configure(highlightcolor="black")
-        photo_location = "escolhamoduloalunos_icone.gif"
+        photo_location = "app\escolhamoduloalunos_icone.gif"
         global _img1
         _img1 = tk.PhotoImage(file=photo_location)
         self.Cliente.configure(image=_img1)
@@ -90,7 +90,7 @@ class Inicio:
         self.Gerente.configure(foreground="#000000")
         self.Gerente.configure(highlightbackground="#d9d9d9")
         self.Gerente.configure(highlightcolor="black")
-        photo_location = "escolhamodulopais_aluno_icone.gif"
+        photo_location = "app\escolhamodulopais_aluno_icone.gif"
         global _img2
         _img2 = tk.PhotoImage(file=photo_location)
         self.Gerente.configure(image=_img2)
@@ -107,7 +107,7 @@ class Inicio:
         self.Logo.configure(cursor="fleur")
         self.Logo.configure(disabledforeground="#a3a3a3")
         self.Logo.configure(foreground="#000000")
-        photo_location = "output-onlinepngtools (1).png"
+        photo_location = "app\output-onlinepngtools (1).png"
         global _img3
         _img3 = tk.PhotoImage(file=photo_location)
         self.Logo.configure(image=_img3)
@@ -131,7 +131,7 @@ class PadraoLogin:
         top.minsize(120, 1)
         top.maxsize(1370, 749)
         top.resizable(1,  1)
-        top.title("LoginCliente")
+        top.title("Login Cliente")
         top.configure(background="#d9d9d9")
 
         self.top = top
@@ -152,7 +152,7 @@ class PadraoLogin:
         self.Logo.configure(disabledforeground="#a3a3a3")
         self.Logo.configure(font="-family {Times New Roman} -size 22 -underline 1")
         self.Logo.configure(foreground="#000000")
-        photo_location = "logo.png"
+        photo_location = "app\logo.png"
         global _img4
         _img4 = tk.PhotoImage(file=photo_location)
         self.Logo.configure(image=_img4)
@@ -212,13 +212,13 @@ class PadraoLogin:
         self.Label1.configure(text='''Senha''')
 
         self.Label1 = tk.Label(self.FrameCliente)
-        self.Label1.place(relx=0.767, rely=0.111, height=21, width=124)
+        self.Label1.place(relx=0.833, rely=0.111, height=21, width=54)
         self.Label1.configure(anchor='w')
         self.Label1.configure(background="#ffffff")
         self.Label1.configure(compound='left')
         self.Label1.configure(disabledforeground="#a3a3a3")
         self.Label1.configure(foreground="#000000")
-        self.Label1.configure(text='''Login''')
+        self.Label1.configure(text='''Usuario''')
 
 class PadraoLogin_1:
     def __init__(self, top=None):
@@ -239,7 +239,7 @@ class PadraoLogin_1:
         top.minsize(120, 1)
         top.maxsize(1370, 749)
         top.resizable(1,  1)
-        top.title("LoginADM")
+        top.title("Login Gerente")
         top.configure(background="#d9d9d9")
         top.configure(highlightbackground="#d9d9d9")
         top.configure(highlightcolor="black")
@@ -266,7 +266,7 @@ class PadraoLogin_1:
         self.Logo.configure(foreground="#000000")
         self.Logo.configure(highlightbackground="#d9d9d9")
         self.Logo.configure(highlightcolor="black")
-        photo_location = "logo.png"
+        photo_location = "app\logo.png"
         global _img5
         _img5 = tk.PhotoImage(file=photo_location)
         self.Logo.configure(image=_img5)
@@ -351,7 +351,7 @@ class LoginADM:
         top.minsize(120, 1)
         top.maxsize(1370, 749)
         top.resizable(1,  1)
-        top.title("LoginGerente")
+        top.title("Login Gerente")
         top.configure(background="#d9d9d9")
         top.configure(highlightbackground="#d9d9d9")
         top.configure(highlightcolor="black")
@@ -378,7 +378,7 @@ class LoginADM:
         self.Logo.configure(foreground="#000000")
         self.Logo.configure(highlightbackground="#d9d9d9")
         self.Logo.configure(highlightcolor="black")
-        photo_location = "logo.png"
+        photo_location = "app\logo.png"
         global _img6
         _img6 = tk.PhotoImage(file=photo_location)
         self.Logo.configure(image=_img6)
