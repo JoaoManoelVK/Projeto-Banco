@@ -14,7 +14,7 @@ from tkinter.constants import *
 import app.Login
 
 import sys
-
+from PIL import ImageTk, Image
 import app.Telas as Telas
 import sqlite3
 

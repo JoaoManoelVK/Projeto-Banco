@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="Login">
+    <file>Login.png</file>
+  </qresource>
+  <qresource prefix="Extrato">
+    <file>TelaExtrato.png</file>
+  </qresource>
+  <qresource prefix="Saque">
+    <file>Withdraw.png</file>
+  </qresource>
+  <qresource prefix="Deposito">
+    <file>Deposit.png</file>
+  </qresource>
+  <qresource prefix="ExternalMenu">
+    <file>ExternalMenu.png</file>
+  </qresource>
+  <qresource prefix="InternalMenu">
+    <file>ExtractButton.png</file>
+    <file>depositbutton.png</file>
+    <file>Withdrawbutton.png</file>
+    <file>InternalMenu.png</file>
+  </qresource>
+</RCC>

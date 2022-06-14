@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>bancoinicio</class>
+ <widget class="QMainWindow" name="bancoinicio">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Banco Assemble</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/ExternalMenu/ExternalMenu.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clientebutton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>225</y>
+      <width>160</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(238, 186, 43);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Cliente</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="gerentebutton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>325</y>
+      <width>160</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(238, 186, 43);</string>
+    </property>
+    <property name="text">
+     <string>Gerente</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="diretorbutton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>429</y>
+      <width>160</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(238, 186, 43);</string>
+    </property>
+    <property name="text">
+     <string>Diretor</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Images/Path.qrc"/>
+ </resources>
+ <connections/>
+</ui>
