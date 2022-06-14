@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
 
-class Ui_menu(object):
+class Ui_menugerente(object):
     def setupUi(self, menu):
         menu.setObjectName("menu")
         menu.resize(500, 500)
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     w = QtWidgets.QMainWindow()
-    ui = Ui_menu()
+    ui = Ui_menugerente()
     ui.setupUi(w)
     w.show()
     sys.exit(app.exec_())
