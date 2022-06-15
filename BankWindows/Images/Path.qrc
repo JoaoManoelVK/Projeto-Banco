@@ -2,6 +2,20 @@
   <qresource prefix="Login">
     <file>Login.png</file>
   </qresource>
+  <qresource prefix="Menu Diretor">
+    <file>Funcionario.png</file>
+    <file>listacliente.png</file>
+    <file>listafuncionario.png</file>
+    <file>emprestimodiretor.png</file>
+    <file>MenuDiretor.png</file>
+  </qresource>
+  <qresource prefix="Menu Gerente">
+    <file>listaclientegerente.png</file>
+    <file>Cliente.png</file>
+    <file>EmprestimoIcon.png</file>
+    <file>Lista.png</file>
+    <file>MenuGerente.png</file>
+  </qresource>
   <qresource prefix="Emprestimo">
     <file>Emprestimo.png</file>
   </qresource>
