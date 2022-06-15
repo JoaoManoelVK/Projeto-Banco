@@ -10,8 +10,17 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
+from menucliente import Ui_menucliente as cliente
 
 class Ui_Login(object):
+
+    def option(self):
+        self.window1 = QtWidgets.QMainWindow()
+        self.ui = cliente()
+        self.ui.setupUi (self.window1)
+        self.window1.show()
+
+
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(500, 500)
@@ -31,6 +40,7 @@ class Ui_Login(object):
         self.user.setStyleSheet("background-color: rgb(238, 186, 43);\n"
 "color: rgb(0, 0, 0);")
         self.user.setObjectName("user")
+        
         self.senha = QtWidgets.QTextEdit(self.centralwidget)
         self.senha.setGeometry(QtCore.QRect(155, 241, 191, 31))
         font = QtGui.QFont()
@@ -40,6 +50,8 @@ class Ui_Login(object):
 "color: rgb(0, 0, 0);")
         self.senha.setObjectName("senha")
         self.login = QtWidgets.QPushButton(self.centralwidget)
+        self.login.clicked.connect(lambda: self.option())
+        self.login.clicked.connect(lambda: Login.close())
         self.login.setGeometry(QtCore.QRect(220, 320, 61, 32))
         self.login.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.login.setObjectName("login")
