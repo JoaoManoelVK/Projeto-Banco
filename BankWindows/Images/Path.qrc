@@ -2,6 +2,15 @@
   <qresource prefix="Login">
     <file>Login.png</file>
   </qresource>
+  <qresource prefix="Emprestimo">
+    <file>Emprestimo.png</file>
+  </qresource>
+  <qresource prefix="Cadastro Funcionario">
+    <file>CadastroFuncionario.png</file>
+  </qresource>
+  <qresource prefix="Cadastro Cliente">
+    <file>CadastroCliente.png</file>
+  </qresource>
   <qresource prefix="Extrato">
     <file>TelaExtrato.png</file>
   </qresource>

@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
 
+
 class Ui_bancoinicio(object):
     def setupUi(self, bancoinicio):
         bancoinicio.setObjectName("bancoinicio")

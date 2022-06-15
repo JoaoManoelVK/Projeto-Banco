@@ -21,7 +21,7 @@ class Ui_saque(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 411, 111))
-        self.label.setStyleSheet("background-image: url(Images\Withdraw.png);")
+        self.label.setStyleSheet("background-image: url(Withdraw.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
