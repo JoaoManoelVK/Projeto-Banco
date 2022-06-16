@@ -21,7 +21,7 @@ class Ui_CadastroFuncionario(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(-2, -5, 501, 511))
-        self.label.setStyleSheet("background-image: url(:/Cadastro Funcionario/CadastroFuncionario.png);")
+        self.label.setStyleSheet("background-image: url(CadastroFuncionario.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)

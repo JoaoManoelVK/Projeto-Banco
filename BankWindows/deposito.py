@@ -9,19 +9,19 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.uic import loadUi
 
-class Ui_deposito(object):
-    def setupUi(self, deposito):
-        deposito.setObjectName("deposito")
-        deposito.resize(400, 100)
-        deposito.setMinimumSize(QtCore.QSize(400, 100))
-        deposito.setMaximumSize(QtCore.QSize(400, 100))
-        self.centralwidget = QtWidgets.QWidget(deposito)
+
+class Ui_Deposito(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(400, 100)
+        MainWindow.setMinimumSize(QtCore.QSize(400, 100))
+        MainWindow.setMaximumSize(QtCore.QSize(400, 100))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 401, 121))
-        self.label.setStyleSheet("background-image: url(BankWindows\Images\Deposit.png);")
+        self.label.setStyleSheet("background-image: url(Deposit.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -29,6 +29,7 @@ class Ui_deposito(object):
         self.pushButton.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.clicked.connect(lambda: MainWindow.close())
         self.pushButton_2.setGeometry(QtCore.QRect(240, 58, 60, 34))
         self.pushButton_2.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton_2.setObjectName("pushButton_2")
@@ -39,17 +40,17 @@ class Ui_deposito(object):
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.textEdit.setObjectName("textEdit")
-        deposito.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(deposito)
-        QtCore.QMetaObject.connectSlotsByName(deposito)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, deposito):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        deposito.setWindowTitle(_translate("deposito", "Deposito"))
-        self.pushButton.setText(_translate("deposito", "Deposite"))
-        self.pushButton_2.setText(_translate("deposito", "Voltar"))
-        self.textEdit.setHtml(_translate("deposito", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow.setWindowTitle(_translate("MainWindow", "Deposito"))
+        self.pushButton.setText(_translate("MainWindow", "Deposite"))
+        self.pushButton_2.setText(_translate("MainWindow", "Voltar"))
+        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
@@ -59,7 +60,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     w = QtWidgets.QMainWindow()
-    ui = Ui_deposito()
+    ui = Ui_Deposito()
     ui.setupUi(w)
     w.show()
     sys.exit(app.exec_())

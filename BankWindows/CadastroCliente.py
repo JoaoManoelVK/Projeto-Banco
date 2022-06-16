@@ -24,7 +24,7 @@ class Ui_CadastroCliente(object):
         font = QtGui.QFont()
         font.setKerning(False)
         self.label.setFont(font)
-        self.label.setStyleSheet("background-image: url(:/Cadastro Cliente/CadastroCliente.png);")
+        self.label.setStyleSheet("background-image: url(CadastroCliente.png);")
         self.label.setLineWidth(0)
         self.label.setText("")
         self.label.setObjectName("label")

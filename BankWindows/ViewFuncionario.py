@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ViewCliente.ui'
+# Form implementation generated from reading ui file 'ViewFuncionario.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_ViewCliente(object):
+class Ui_ViewFuncionario(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1000, 500)
@@ -21,14 +21,14 @@ class Ui_ViewCliente(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1001, 501))
-        self.label.setStyleSheet("background-image: url(:/Extrato/TelaExtrato.png);")
+        self.label.setStyleSheet("background-image: url(TelaExtrato.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(50, 50, 901, 391))
         self.tableWidget.setStyleSheet("")
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(5)
+        self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
@@ -36,10 +36,6 @@ class Ui_ViewCliente(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, item)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(883, 452, 97, 38))
         self.pushButton.setStyleSheet("background-color: rgb(238, 186, 43);")
@@ -57,10 +53,6 @@ class Ui_ViewCliente(object):
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "CONTA"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "TIPO DE CONTA"))
-        item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "SALDO"))
-        item = self.tableWidget.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "GERENTE"))
+        item.setText(_translate("MainWindow", "CARGO"))
         self.pushButton.setText(_translate("MainWindow", "Voltar"))
 

@@ -10,9 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
-from logincliente import Ui_Login as logincliente
-from logingerente import Ui_Login as logingerente
-from logindiretor import Ui_Login as logindiretor
+from requests import options
+from logincliente import Ui_LoginCliente as cliente
+from logingerente import Ui_LoginGerente as gerente
+from logindiretor import Ui_LoginDiretor as diretor
 
 
 class Ui_bancoinicio(object):
@@ -20,22 +21,22 @@ class Ui_bancoinicio(object):
     def options (self,x):
         if x == 1:
             self.window1 = QtWidgets.QMainWindow()
-            self.ui = logincliente()
+            self.ui = cliente()
             self.ui.setupUi (self.window1)
             self.window1.show()
         elif x == 2:
             self.window2 = QtWidgets.QMainWindow()
-            self.ui = logingerente()
+            self.ui = gerente()
             self.ui.setupUi (self.window2)
             self.window2.show()
         else:
             self.window3 = QtWidgets.QMainWindow()
-            self.ui = logindiretor()
+            self.ui = diretor()
             self.ui.setupUi (self.window3)
             self.window3.show()
-        
-    def setupUi(self, bancoinicio):
 
+
+    def setupUi(self, bancoinicio):
         bancoinicio.setObjectName("bancoinicio")
         bancoinicio.resize(500, 500)
         bancoinicio.setMinimumSize(QtCore.QSize(500, 500))
@@ -47,20 +48,22 @@ class Ui_bancoinicio(object):
         self.label.setStyleSheet("background-image: url(ExternalMenu.png);")
         self.label.setText("")
         self.label.setObjectName("label")
-        self.clientebutton = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.options(1))
+        self.clientebutton = QtWidgets.QPushButton(self.centralwidget)
+        self.clientebutton.clicked.connect(lambda: self.options(1))
         self.clientebutton.clicked.connect(lambda: bancoinicio.close())
         self.clientebutton.setGeometry(QtCore.QRect(170, 225, 160, 51))
         self.clientebutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
 "\n"
 "")
-
         self.clientebutton.setObjectName("clientebutton")
-        self.gerentebutton = QtWidgets.QPushButton(self.centralwidget, clicked=lambda: self.options(2))
+        self.gerentebutton = QtWidgets.QPushButton(self.centralwidget)
+        self.gerentebutton.clicked.connect(lambda: self.options(2))
         self.gerentebutton.clicked.connect(lambda: bancoinicio.close())
         self.gerentebutton.setGeometry(QtCore.QRect(170, 325, 160, 51))
         self.gerentebutton.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.gerentebutton.setObjectName("gerentebutton")
-        self.diretorbutton = QtWidgets.QPushButton(self.centralwidget, clicked=lambda: self.options(0))
+        self.diretorbutton = QtWidgets.QPushButton(self.centralwidget)
+        self.diretorbutton.clicked.connect(lambda: self.options(0))
         self.diretorbutton.clicked.connect(lambda: bancoinicio.close())
         self.diretorbutton.setGeometry(QtCore.QRect(170, 429, 160, 51))
         self.diretorbutton.setStyleSheet("background-color: rgb(238, 186, 43);")

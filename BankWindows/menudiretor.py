@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'menugerente.ui'
+# Form implementation generated from reading ui file 'menudiretor.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -9,24 +9,29 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from requests import options
-from CadastroCliente import Ui_CadastroCliente as CadastroCliente
-from ViewCliente import Ui_ViewCliente as ViewCliente
+from CadastroFuncionario import Ui_CadastroFuncionario as cadastrofuncionario
+from ViewCliente import Ui_ViewCliente as cliente
+from ViewFuncionario import Ui_ViewFuncionario as funcionario
 
-class Ui_Gerente(object):
+
+class Ui_Diretor(object):
 
     def options (self,x):
         if x == 1:
             self.window1 = QtWidgets.QMainWindow()
-            self.ui = CadastroCliente()
+            self.ui = cadastrofuncionario()
             self.ui.setupUi (self.window1)
             self.window1.show()
         elif x == 2:
             self.window2 = QtWidgets.QMainWindow()
-            self.ui = ViewCliente()
+            self.ui = cliente()
             self.ui.setupUi (self.window2)
             self.window2.show()
-
+        else:
+            self.window3 = QtWidgets.QMainWindow()
+            self.ui = funcionario()
+            self.ui.setupUi (self.window3)
+            self.window3.show()
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(500, 500)
@@ -35,35 +40,47 @@ class Ui_Gerente(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 501, 511))
-        self.label.setStyleSheet("background-image: url(:/Menu Gerente/MenuGerente.png);")
+        self.label.setStyleSheet("background-image: url(MenuDiretor.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.nametext = QtWidgets.QTextBrowser(self.centralwidget)
-        self.nametext.setGeometry(QtCore.QRect(50, 50, 401, 71))
+        self.nametext.setGeometry(QtCore.QRect(40, 50, 411, 62))
         font = QtGui.QFont()
         font.setPointSize(24)
         self.nametext.setFont(font)
         self.nametext.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.nametext.setObjectName("nametext")
-        self.clientcreator = QtWidgets.QPushButton(self.centralwidget)
-        self.clientcreator.clicked.connect(lambda: self.options(1))
-        self.clientcreator.setGeometry(QtCore.QRect(39, 370, 121, 111))
-        self.clientcreator.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/Cliente.png);\n"
+        self.funccreator = QtWidgets.QPushButton(self.centralwidget)
+        self.funccreator.clicked.connect(lambda: self.options(1))
+        self.funccreator.setGeometry(QtCore.QRect(65, 169, 158, 137))
+        self.funccreator.setStyleSheet("background-color: rgb(238, 186, 43);\n"
+"background-image: url(:/Menu Diretor/Funcionario.png);\n"
 "")
-        self.clientcreator.setText("")
-        self.clientcreator.setObjectName("clientcreator")
+        self.funccreator.setText("")
+        self.funccreator.setObjectName("funccreator")
         self.clientview = QtWidgets.QPushButton(self.centralwidget)
         self.clientview.clicked.connect(lambda: self.options(2))
-        self.clientview.setGeometry(QtCore.QRect(189, 370, 121, 111))
+        self.clientview.setGeometry(QtCore.QRect(270, 170, 158, 136))
         self.clientview.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/listaclientegerente.png);")
+"background-image: url(:/Menu Diretor/listacliente.png);\n"
+"")
         self.clientview.setText("")
         self.clientview.setObjectName("clientview")
+        self.funcview = QtWidgets.QPushButton(self.centralwidget)
+        self.funcview.clicked.connect(lambda: self.options(3))
+        self.funcview.setGeometry(QtCore.QRect(65, 339, 158, 140))
+        self.funcview.setStyleSheet("background-color: rgb(238, 186, 43);\n"
+"background-image: url(:/Menu Diretor/listafuncionario.png);\n"
+"\n"
+"")
+        self.funcview.setText("")
+        self.funcview.setObjectName("funcview")
         self.emprestimo = QtWidgets.QPushButton(self.centralwidget)
-        self.emprestimo.setGeometry(QtCore.QRect(340, 370, 121, 111))
+        self.emprestimo.setGeometry(QtCore.QRect(270, 340, 158, 140))
         self.emprestimo.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/EmprestimoIcon.png);")
+"background-image: url(:/Menu Diretor/emprestimodiretor.png);\n"
+"\n"
+"")
         self.emprestimo.setText("")
         self.emprestimo.setObjectName("emprestimo")
         MainWindow.setCentralWidget(self.centralwidget)

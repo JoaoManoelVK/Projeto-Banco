@@ -41,7 +41,7 @@ class Ui_Cliente(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 501, 511))
-        self.label.setStyleSheet("background-image: url(:/InternalMenu/InternalMenu.png);")
+        self.label.setStyleSheet("background-image: url(InternalMenu.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.nametext = QtWidgets.QTextBrowser(self.centralwidget)

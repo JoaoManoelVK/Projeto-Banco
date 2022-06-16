@@ -9,15 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.uic import loadUi
-
-class Ui_saque(object):
-    def setupUi(self, saque):
-        saque.setObjectName("saque")
-        saque.resize(400, 100)
-        saque.setMinimumSize(QtCore.QSize(400, 100))
-        saque.setMaximumSize(QtCore.QSize(400, 100))
-        self.centralwidget = QtWidgets.QWidget(saque)
+class Ui_Saque(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(400, 100)
+        MainWindow.setMinimumSize(QtCore.QSize(400, 100))
+        MainWindow.setMaximumSize(QtCore.QSize(400, 100))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 411, 111))
@@ -36,30 +34,23 @@ class Ui_saque(object):
         self.pushButton_3.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.clicked.connect(lambda: MainWindow.close())
         self.pushButton_4.setGeometry(QtCore.QRect(240, 60, 60, 34))
         self.pushButton_4.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton_4.setObjectName("pushButton_4")
-        saque.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(saque)
-        QtCore.QMetaObject.connectSlotsByName(saque)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, saque):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        saque.setWindowTitle(_translate("saque", "Saque"))
-        self.textEdit.setHtml(_translate("saque", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow.setWindowTitle(_translate("MainWindow", "Saque"))
+        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
-        self.pushButton_3.setText(_translate("saque", "Saque"))
-        self.pushButton_4.setText(_translate("saque", "Voltar"))
+        self.pushButton_3.setText(_translate("MainWindow", "Saque"))
+        self.pushButton_4.setText(_translate("MainWindow", "Voltar"))
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    w = QtWidgets.QMainWindow()
-    ui = Ui_saque()
-    ui.setupUi(w)
-    w.show()
-    sys.exit(app.exec_())
