@@ -54,7 +54,7 @@ class Ui_Diretor(object):
         self.funccreator.clicked.connect(lambda: self.options(1))
         self.funccreator.setGeometry(QtCore.QRect(65, 169, 158, 137))
         self.funccreator.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Diretor/Funcionario.png);\n"
+"background-image: url(Funcionario.png);\n"
 "")
         self.funccreator.setText("")
         self.funccreator.setObjectName("funccreator")
@@ -62,7 +62,7 @@ class Ui_Diretor(object):
         self.clientview.clicked.connect(lambda: self.options(2))
         self.clientview.setGeometry(QtCore.QRect(270, 170, 158, 136))
         self.clientview.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Diretor/listacliente.png);\n"
+"background-image: url(listacliente.png);\n"
 "")
         self.clientview.setText("")
         self.clientview.setObjectName("clientview")
@@ -70,7 +70,7 @@ class Ui_Diretor(object):
         self.funcview.clicked.connect(lambda: self.options(3))
         self.funcview.setGeometry(QtCore.QRect(65, 339, 158, 140))
         self.funcview.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Diretor/listafuncionario.png);\n"
+"background-image: url(listafuncionario.png);\n"
 "\n"
 "")
         self.funcview.setText("")
@@ -78,7 +78,7 @@ class Ui_Diretor(object):
         self.emprestimo = QtWidgets.QPushButton(self.centralwidget)
         self.emprestimo.setGeometry(QtCore.QRect(270, 340, 158, 140))
         self.emprestimo.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Diretor/emprestimodiretor.png);\n"
+"background-image: url(emprestimodiretor.png);\n"
 "\n"
 "")
         self.emprestimo.setText("")

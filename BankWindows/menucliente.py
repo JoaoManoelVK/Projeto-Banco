@@ -59,7 +59,7 @@ class Ui_menucliente(object):
         self.withdrawbutton.clicked.connect(lambda: menu.close())
         self.withdrawbutton.setGeometry(QtCore.QRect(39, 370, 121, 111))
         self.withdrawbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/InternalMenu/Withdrawbutton.png);")
+"background-image: url(Withdrawbutton.png);")
         self.withdrawbutton.setText("")
         self.withdrawbutton.setObjectName("withdrawbutton")
         self.depositbutton = QtWidgets.QPushButton(self.centralwidget)
@@ -67,7 +67,7 @@ class Ui_menucliente(object):
         self.depositbutton.clicked.connect(lambda: menu.close())
         self.depositbutton.setGeometry(QtCore.QRect(189, 370, 121, 111))
         self.depositbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/InternalMenu/depositbutton.png);")
+"background-image: url(depositbutton.png);")
         self.depositbutton.setText("")
         self.depositbutton.setObjectName("depositbutton")
         self.extractbutton = QtWidgets.QPushButton(self.centralwidget)
@@ -75,7 +75,7 @@ class Ui_menucliente(object):
         self.extractbutton.clicked.connect(lambda: menu.close())
         self.extractbutton.setGeometry(QtCore.QRect(340, 370, 121, 111))
         self.extractbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/InternalMenu/ExtractButton.png);")
+"background-image: url(ExtractButton.png);")
         self.extractbutton.setText("")
         self.extractbutton.setObjectName("extractbutton")
         menu.setCentralWidget(self.centralwidget)

@@ -49,7 +49,7 @@ class Ui_Gerente(object):
         self.clientcreator.clicked.connect(lambda: self.options(1))
         self.clientcreator.setGeometry(QtCore.QRect(39, 370, 121, 111))
         self.clientcreator.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/Cliente.png);\n"
+"background-image: url(Cliente.png);\n"
 "")
         self.clientcreator.setText("")
         self.clientcreator.setObjectName("clientcreator")
@@ -57,13 +57,13 @@ class Ui_Gerente(object):
         self.clientview.clicked.connect(lambda: self.options(2))
         self.clientview.setGeometry(QtCore.QRect(189, 370, 121, 111))
         self.clientview.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/listaclientegerente.png);")
+"background-image: url(listaclientegerente.png);")
         self.clientview.setText("")
         self.clientview.setObjectName("clientview")
         self.emprestimo = QtWidgets.QPushButton(self.centralwidget)
         self.emprestimo.setGeometry(QtCore.QRect(340, 370, 121, 111))
         self.emprestimo.setStyleSheet("background-color: rgb(238, 186, 43);\n"
-"background-image: url(:/Menu Gerente/EmprestimoIcon.png);")
+"background-image: url(EmprestimoIcon.png);")
         self.emprestimo.setText("")
         self.emprestimo.setObjectName("emprestimo")
         MainWindow.setCentralWidget(self.centralwidget)
