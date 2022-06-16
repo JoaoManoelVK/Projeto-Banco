@@ -14,13 +14,13 @@ from saque import Ui_Saque as mainwindow2
 from Extrato import Ui_Extrato as mainwindow3
 
 class Ui_Cliente(object):
-
     def options (self,x):
         if x == 1:
             self.window1 = QtWidgets.QMainWindow()
             self.ui = mainwindow1()
             self.ui.setupUi (self.window1)
             self.window1.show()
+            print(self.r)
         elif x == 2:
             self.window2 = QtWidgets.QMainWindow()
             self.ui = mainwindow2()

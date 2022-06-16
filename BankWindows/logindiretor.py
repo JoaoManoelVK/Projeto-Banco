@@ -15,13 +15,6 @@ from menudiretor import Ui_Diretor as diretor
 
 class Ui_LoginDiretor(object):
 
-    def option(self):
-        self.window1 = QtWidgets.QMainWindow()
-        self.ui = diretor()
-        self.ui.setupUi (self.window1)
-        self.window1.show()
-
-
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(500, 500)
@@ -50,7 +43,7 @@ class Ui_LoginDiretor(object):
 "color: rgb(0, 0, 0);")
         self.senha.setObjectName("senha")
         self.login = QtWidgets.QPushButton(self.centralwidget)
-        self.login.clicked.connect(lambda: self.option())
+        self.login.clicked.connect(lambda: self.option(self.user.toPlainText(),self.user.toPlainText()))
         self.login.clicked.connect(lambda: Login.close())
         self.login.setGeometry(QtCore.QRect(220, 320, 61, 32))
         self.login.setStyleSheet("background-color: rgb(238, 186, 43);")
@@ -75,6 +68,13 @@ class Ui_LoginDiretor(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
         self.login.setText(_translate("Login", "Login"))
 
+    def option(self,usuario,senha):
+        self.window1 = QtWidgets.QMainWindow()
+        self.ui = diretor()
+        self.ui.setupUi (self.window1)
+        self.window1.show()
+        print(usuario)
+        print(senha)
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

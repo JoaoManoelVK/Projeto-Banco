@@ -1,12 +1,13 @@
-from email.mime import base
-from tomlkit import string
-
-
-baseurl = 'https://c44c-2804-ec8-18-2718-2854-71a4-96f-2.sa.ngrok.io'
-
 import requests
 
-myobj = {'cpf': '12345678909','senha': '123456'}
+url = "https://d6d0-2804-ec8-18-2718-2854-71a4-96f-2.sa.ngrok.io/auth"
 
-x = requests.post(baseurl+'/auth',json=myobj)
-print(x.json()['token'])
+payload = {
+    "cpf": "12345678909",
+    "senha": "123456"
+}
+headers = {"Content-Type": "application/json"}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+
+print(response.text)
