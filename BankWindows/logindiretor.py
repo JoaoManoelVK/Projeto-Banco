@@ -11,7 +11,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
 
+
 class Ui_Login(object):
+
+    def option(self):
+        self.window1 = QtWidgets.QMainWindow()
+        self.ui = cliente()
+        self.ui.setupUi (self.window1)
+        self.window1.show()
+
+
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(500, 500)
