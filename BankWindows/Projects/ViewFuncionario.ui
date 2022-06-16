@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Extrato</string>
+   <string>Banco Assemble</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -62,16 +62,6 @@
     <column>
      <property name="text">
       <string>CONTA</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TIPO DE CONTA</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>SALDO</string>
      </property>
     </column>
     <column>

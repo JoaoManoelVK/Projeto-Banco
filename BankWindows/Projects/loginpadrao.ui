@@ -107,7 +107,7 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <resources>
-  <include location="Images/Path.qrc"/>
+  <include location="../Images/Path.qrc"/>
  </resources>
  <connections/>
 </ui>

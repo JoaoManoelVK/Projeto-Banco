@@ -10,13 +10,13 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
-from menucliente import Ui_menucliente as cliente
+from menupadrao import Ui_Cliente as menu
 
-class Ui_Login(object):
+class Ui_LoginCliente(object):
 
     def option(self):
         self.window1 = QtWidgets.QMainWindow()
-        self.ui = cliente()
+        self.ui = menu()
         self.ui.setupUi (self.window1)
         self.window1.show()
 
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     w = QtWidgets.QMainWindow()
-    ui = Ui_Login()
+    ui = Ui_LoginCliente()
     ui.setupUi(w)
     w.show()
     sys.exit(app.exec_())

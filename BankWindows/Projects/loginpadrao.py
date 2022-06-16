@@ -9,18 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.uic import loadUi
-from requests import options
-from menugerente import Ui_menugerente as gerente
+
 
 class Ui_Login(object):
-
-    def option(self):
-        self.window1 = QtWidgets.QMainWindow()
-        self.ui = gerente()
-        self.ui.setupUi (self.window1)
-        self.window1.show()
-
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(500, 500)
@@ -29,7 +20,7 @@ class Ui_Login(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 501, 501))
-        self.label.setStyleSheet("background-image: url(Login.png);")
+        self.label.setStyleSheet("background-image: url(:/Login/Login.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.user = QtWidgets.QTextEdit(self.centralwidget)
@@ -50,8 +41,6 @@ class Ui_Login(object):
         self.senha.setObjectName("senha")
         self.login = QtWidgets.QPushButton(self.centralwidget)
         self.login.setGeometry(QtCore.QRect(220, 320, 61, 32))
-        self.login.clicked.connect(lambda: self.option())
-        self.login.clicked.connect(lambda: Login.close())
         self.login.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.login.setObjectName("login")
         Login.setCentralWidget(self.centralwidget)
@@ -73,12 +62,3 @@ class Ui_Login(object):
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
         self.login.setText(_translate("Login", "Login"))
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    w = QtWidgets.QMainWindow()
-    ui = Ui_Login()
-    ui.setupUi(w)
-    w.show()
-    sys.exit(app.exec_())
