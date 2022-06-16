@@ -14,6 +14,8 @@ from CadastroCliente import Ui_CadastroCliente as CadastroCliente
 from ViewCliente import Ui_ViewCliente as ViewCliente
 
 class Ui_Gerente(object):
+    def __init__(self, realpart):         
+        self.r = realpart
 
     def options (self,x):
         if x == 1:

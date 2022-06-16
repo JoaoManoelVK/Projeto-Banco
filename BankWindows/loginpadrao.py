@@ -9,9 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox, QWidget
 
+
+class Ui_Dialog(object):
+    def __init__(self,mensagem):
+        super().__init__()
+
+    def clickMethod(self):
+        QMessageBox.about(self, "Erro", self.mensagem)
 
 class Ui_Login(object):
+
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(500, 500)
