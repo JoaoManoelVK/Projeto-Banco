@@ -9,7 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import sessao
+import RequestCreateCheckingAccount
+import RequestCreateSavingsAccount
 
 class Ui_CadastroCliente(object):
     def setupUi(self, MainWindow):
@@ -105,3 +107,7 @@ class Ui_CadastroCliente(object):
         self.tipodeconta.setItemText(1, _translate("MainWindow", "POUPANÇA"))
         self.pushButton.setText(_translate("MainWindow", "CADASTRAR"))
 
+def informacoes(self,nome,numero,cpf,endereco,senha,tipodeconta):
+    if(tipodeconta == "POUPANÇA"):
+        try:
+            RequestCreateSavingsAccount.create(sessao.sessao['token'],)
