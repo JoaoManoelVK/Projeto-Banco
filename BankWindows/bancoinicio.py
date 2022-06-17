@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
 from requests import options
-from logincliente import Ui_LoginCliente as cliente
+from logincliente import Ui_Login as cliente
 from logingerente import Ui_LoginGerente as gerente
 from logindiretor import Ui_LoginDiretor as diretor
 

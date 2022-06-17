@@ -1,0 +1,3 @@
+import RequestAuth,RequestCreateCheckingAccount,RequestCreateSavingsAccount,RequestDeposit,RequestWithdraw,RequestExtract,RequestListAccounts,RequestTransfer
+
+RequestAuth()

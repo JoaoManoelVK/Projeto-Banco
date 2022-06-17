@@ -9,6 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import RequestExtract
+import sessao
+
 class Ui_Extrato(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -39,6 +42,7 @@ class Ui_Extrato(object):
         self.pushButton.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
+        self.loaddata(sessao.sessao['token'],1)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -51,8 +55,18 @@ class Ui_Extrato(object):
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Operação"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Quantidade"))
+        item.setText(_translate("MainWindow", "Valor"))
         self.pushButton.setText(_translate("MainWindow", "Voltar"))
+    def loaddata(self,token,conta):
+        resultado = RequestExtract.extract(token,conta)
+        row = 0
+        self.tableWidget.setRowCount(len(resultado))
+        for item in resultado:
+            self.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem(item['createdAt']))
+            self.tableWidget.setItem(row,1,QtWidgets.QTableWidgetItem(item['tipo']))
+            self.tableWidget.setItem(row,2,QtWidgets.QTableWidgetItem(str(item['valor'])))
+            row = row+1            
+
 
 if __name__ == "__main__":
     import sys

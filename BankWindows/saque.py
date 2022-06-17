@@ -9,6 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox, QWidget
+from requests import request
+import RequestWithdraw
+import sessao
+class MainClass(QWidget):
+    def __init__(self,text):
+        super().__init__()
+        self.text = text
+
+    def clickMethod(self):
+        QMessageBox.about(self, "Saque", self.text)
+
 class Ui_Saque(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -22,35 +34,54 @@ class Ui_Saque(object):
         self.label.setStyleSheet("background-image: url(Withdraw.png);")
         self.label.setText("")
         self.label.setObjectName("label")
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(100, 20, 201, 31))
+        self.valor = QtWidgets.QTextEdit(self.centralwidget)
+        self.valor.setGeometry(QtCore.QRect(100, 20, 201, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.textEdit.setFont(font)
-        self.textEdit.setStyleSheet("background-color: rgb(238, 186, 43);")
-        self.textEdit.setObjectName("textEdit")
+        self.valor.setFont(font)
+        self.valor.setStyleSheet("background-color: rgb(238, 186, 43);")
+        self.valor.setObjectName("valor")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(100, 60, 60, 34))
         self.pushButton_3.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.clicked.connect(lambda: MainWindow.close())
         self.pushButton_4.setGeometry(QtCore.QRect(240, 60, 60, 34))
         self.pushButton_4.setStyleSheet("background-color: rgb(238, 186, 43);")
         self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_4.clicked.connect(lambda: MainWindow.close())
+        self.conta = QtWidgets.QTextEdit(self.centralwidget)
+        self.conta.setGeometry(QtCore.QRect(30, 20, 61, 31))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.conta.setFont(font)
+        self.conta.setStyleSheet("background-color: rgb(238, 186, 43);")
+        self.conta.setObjectName("conta")
         MainWindow.setCentralWidget(self.centralwidget)
-
+        self.pushButton_3.clicked.connect(lambda: self.informacoes(self.conta.toPlainText(),self.valor.toPlainText()))
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def informacoes(self,conta,valor):
+        try:
+            RequestWithdraw.withdraw(sessao.sessao['token'],conta,valor)
+            MainClass('Saque Realizado com Sucesso').clickMethod()
+        except Exception as e:
+            MainClass('Erro:'+str(e)).clickMethod()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Saque"))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.valor.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">"+ 'Conta' +"<br /></p></body></html>"))
+        self.pushButton_3.setText(_translate("MainWindow", "Saque"))
+        self.pushButton_4.setText(_translate("MainWindow", "Voltar"))
+        self.conta.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><br /></p></body></html>"))
-        self.pushButton_3.setText(_translate("MainWindow", "Saque"))
-        self.pushButton_4.setText(_translate("MainWindow", "Voltar"))
 

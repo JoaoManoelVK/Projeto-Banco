@@ -14,8 +14,7 @@ from PyQt5.uic import loadUi
 from saque import Ui_Saque as saque
 from deposito import Ui_Deposito as deposito
 from Extrato import Ui_Extrato as extrato
-import logincliente
-
+import sessao
 baseurl = "http://localhost:3000"
 
 class Ui_menucliente(object):
@@ -59,7 +58,6 @@ class Ui_menucliente(object):
         self.balancetext.setObjectName("balancetext")
         self.withdrawbutton = QtWidgets.QPushButton(self.centralwidget)
         self.withdrawbutton.clicked.connect(lambda: self.options(1))
-        self.withdrawbutton.clicked.connect(lambda: menu.close())
         self.withdrawbutton.setGeometry(QtCore.QRect(39, 370, 121, 111))
         self.withdrawbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
 "background-image: url(Withdrawbutton.png);")
@@ -67,7 +65,6 @@ class Ui_menucliente(object):
         self.withdrawbutton.setObjectName("withdrawbutton")
         self.depositbutton = QtWidgets.QPushButton(self.centralwidget)
         self.depositbutton.clicked.connect(lambda: self.options(2))
-        self.depositbutton.clicked.connect(lambda: menu.close())
         self.depositbutton.setGeometry(QtCore.QRect(189, 370, 121, 111))
         self.depositbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
 "background-image: url(depositbutton.png);")
@@ -75,7 +72,6 @@ class Ui_menucliente(object):
         self.depositbutton.setObjectName("depositbutton")
         self.extractbutton = QtWidgets.QPushButton(self.centralwidget)
         self.extractbutton.clicked.connect(lambda: self.options(0))
-        self.extractbutton.clicked.connect(lambda: menu.close())
         self.extractbutton.setGeometry(QtCore.QRect(340, 370, 121, 111))
         self.extractbutton.setStyleSheet("background-color: rgb(238, 186, 43);\n"
 "background-image: url(ExtractButton.png);")
@@ -87,18 +83,19 @@ class Ui_menucliente(object):
         QtCore.QMetaObject.connectSlotsByName(menu)
 
     def retranslateUi(self, menu):
+        print(sessao.sessao)
         _translate = QtCore.QCoreApplication.translate
         menu.setWindowTitle(_translate("menu", "Banco Assemble"))
         self.nametext.setHtml(_translate("menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">Bem vindo, "+  +" </span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">Bem vindo, "+ sessao.sessao['pessoa']['nome'] +" </span></p></body></html>"))
         self.balancetext.setHtml(_translate("menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt;\">R$:"+  +"</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt;\">R$:"+ '123' +"</span></p></body></html>"))
 
 if __name__ == "__main__":
     import sys

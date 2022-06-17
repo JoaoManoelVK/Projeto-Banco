@@ -15,9 +15,6 @@ from ViewFuncionario import Ui_ViewFuncionario as funcionario
 
 
 class Ui_Diretor(object):
-    def __init__(self, realpart):         
-        self.r = realpart
-
     def options (self,x):
         if x == 1:
             self.window1 = QtWidgets.QMainWindow()
