@@ -10,7 +10,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import RequestListAccounts
-RequestListAccounts.listAccounts()
 
 class Ui_ViewCliente(object):
     def setupUi(self, MainWindow):
@@ -65,5 +64,3 @@ class Ui_ViewCliente(object):
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "GERENTE"))
         self.pushButton.setText(_translate("MainWindow", "Voltar"))
-    def informacoes(self):
-        self.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem())

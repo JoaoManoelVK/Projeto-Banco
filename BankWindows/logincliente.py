@@ -84,25 +84,11 @@ class Ui_Login(object):
         try:
                 request = RequestAuth.auth(usuario,senha)
                 sessao.sessao = request
-                if not('cargo' in request):
-                    self.window1 = QtWidgets.QMainWindow()
-                    self.ui = menucliente()
-                    self.ui.setupUi (self.window1)
-                    self.window1.show()
-                    self.close()
-                elif(request['cargo']['nome'] == 'Gerente'):
-                    self.window1 = QtWidgets.QMainWindow()
-                    self.ui = gerente()
-                    self.ui.setupUi (self.window1)
-                    self.window1.show()
-                    self.close()
-                elif(request['cargo']['nome'] == 'Diretor'):
-                    self.window1 = QtWidgets.QMainWindow()
-                    self.ui = diretor()
-                    self.ui.setupUi (self.window1)
-                    self.window1.show()
-                    self.close()
-                    
+                self.window1 = QtWidgets.QMainWindow()
+                self.ui = menucliente()
+                self.ui.setupUi (self.window1)
+                self.window1.show()
+                self.close()
         except Exception as e:
                 MainClass('Erro:'+str(e)).clickMethod()
 
